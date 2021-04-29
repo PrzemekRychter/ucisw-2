@@ -1,0 +1,5 @@
+MODULE raw_main
+	SUBMODULE dac_signal_generator
+		INSTANCE XLXI_1
+	SUBMODULE keyboard_to_key
+		INSTANCE XLXI_2

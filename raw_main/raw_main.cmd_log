@@ -1,0 +1,2 @@
+sch2sym -intstyle ise -family spartan3e -w -refsym raw_main {/home/przem/Documents/Semestr6/UCiSW 2/Projekt/Organy/raw_main.sch} {/home/przem/Documents/Semestr6/UCiSW 2/Projekt/Organy/raw_main.sym} 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl raw_main_drc.vhf -w {/home/przem/Documents/Semestr6/UCiSW 2/Projekt/Organy/raw_main.sch} 

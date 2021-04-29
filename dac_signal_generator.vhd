@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    17:29:06 04/10/2021 
+-- Create Date:    09:04:39 04/29/2021 
 -- Design Name: 
--- Module Name:    Dec_sign_generator - Behavioral 
+-- Module Name:    dac_signal_generator - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -30,7 +30,7 @@ use ieee.numeric_std.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Dec_sign_generator is
+entity dac_signal_generator is
     Port ( Rdy : in  STD_LOGIC;
            Clk : in  STD_LOGIC;
 			  Key : in STD_LOGIC_VECTOR (3 downto 0);
@@ -38,9 +38,9 @@ entity Dec_sign_generator is
            Address : out  STD_LOGIC_VECTOR (3 downto 0);
            Data : out  STD_LOGIC_VECTOR (11 downto 0);
            Start : out  STD_LOGIC);
-end Dec_sign_generator;
+end dac_signal_generator;
 
-architecture Behavioral of Dec_sign_generator is
+architecture Behavioral of dac_signal_generator is
 
 	signal clks_delay : integer := 999;
 	signal clk_counter : integer := 0;
@@ -48,18 +48,18 @@ architecture Behavioral of Dec_sign_generator is
 begin
 
 	with Key select clks_delay <=
-		1275 when "0000",	-- 784  g2		[ HZ ]
-		1203 when "0001", -- 830,6 gis2
-		1135 when "0010", -- 880,0 a2
-		1072 when "0011", -- 932,3 b2
-		1011 when "0100", -- 987,8 h2
-		955 when "0101", 	-- 1046,5 c3
-		901 when "0110", 	-- 1108,7 cis3
-		850 when "0111", 	-- 1174,7 d3
-		803 when "1000",  -- 1244,5 dis3
-		757 when "1001",	-- 1318,5 e3
-		715 when "1010",	-- 1396,9 f3
-		675 when "1011",	-- 1480,0 fis3
+		955 when "0000",	-- 1046.50 c		[ HZ ]
+		901 when "0001", -- 1108.73 cis
+		850 when "0010", -- 1174.66 d
+		802 when "0011", -- 1244.51 dis
+		758 when "0100", -- 1318.51 e
+		715 when "0101", 	-- 1396.91 f
+		675 when "0110", 	-- 1479.98 fis
+		637 when "0111", 	-- 1567.98 g
+		601 when "1000",  -- 1661.22 gis
+		567 when "1001",	-- 1760.00 a
+		535 when "1010",	-- 1864.66 b
+		505 when "1011",	-- 1975.53 h
 		0 	 when others;
 	
 	Command <= "0011";

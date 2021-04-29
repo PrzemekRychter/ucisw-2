@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   23:10:55 04/10/2021
+-- Create Date:   09:08:48 04/29/2021
 -- Design Name:   
--- Module Name:   C:/Users/artur/OneDrive/Pulpit/UCiSW_2/Projekt/Digit_signal_gen_tb.vhd
--- Project Name:  Projekt
+-- Module Name:   /home/przem/Documents/Semestr6/UCiSW 2/Projekt/Organy/dac_signal_generator_tb.vhd
+-- Project Name:  Organy
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: Dec_sign_generator
+-- VHDL Test Bench Created by ISE for module: dac_signal_generator
 -- 
 -- Dependencies:
 -- 
@@ -32,14 +32,14 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY Digit_signal_gen_tb IS
-END Digit_signal_gen_tb;
+ENTITY dac_signal_generator_tb IS
+END dac_signal_generator_tb;
  
-ARCHITECTURE behavior OF Digit_signal_gen_tb IS 
+ARCHITECTURE behavior OF dac_signal_generator_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT Dec_sign_generator
+    COMPONENT dac_signal_generator
     PORT(
          Rdy : IN  std_logic;
          Clk : IN  std_logic;
@@ -68,7 +68,7 @@ ARCHITECTURE behavior OF Digit_signal_gen_tb IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: Dec_sign_generator PORT MAP (
+   uut: dac_signal_generator PORT MAP (
           Rdy => Rdy,
           Clk => Clk,
 			 Key => Key,
